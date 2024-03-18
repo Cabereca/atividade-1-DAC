@@ -28,10 +28,13 @@ public class DBDao {
     }
 
     public void criarTabelaReservas() {
-        String sql = "CREATE TABLE IF NOT EXISTS reserva(\n" +
+        String sql = "CREATE TABLE IF NOT EXISTS reservas(\n" +
                 "        id int PRIMARY KEY,\n" +
-                "        idReserva int,\n" +
-                "        foreign key (idReserva) references hospedes(id)\n" +
+                "        idHospede int not null,\n" +
+                "        numeroQuarto int not null,\n" +
+                "        dataEntrada Date not null,\n" +
+                "        dataSaida date not null,\n" +
+                "        foreign key (idHospede) references hospedes(id)\n" +
                 "        );";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
