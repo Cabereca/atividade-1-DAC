@@ -87,9 +87,8 @@ public class ReservaDao {
         try{
             PreparedStatement stmt = this.connection.prepareStatement(sql);
             stmt.setInt(1, numeroQuarto);
-            // converter LocalDate para date
-            stmt.setDate(2, dataEntrada);
-            stmt.setDate(3, dataSaida);
+            stmt.setDate(2, Date.valueOf(dataEntrada));
+            stmt.setDate(3, Date.valueOf(dataSaida));
             stmt.setInt(4, id);
 
             stmt.execute();
