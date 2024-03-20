@@ -54,6 +54,32 @@ public class HospedeDao {
         return hospede;
     }
 
+    public void AtualizarHospede(Integer id, String nome, String cpf) {
+        String sql = "update hospedes set nome=?, cpf=? where id=?";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            stmt.setString(1, nome);
+            stmt.setString(2, cpf);
+            stmt.setLong(3, id);
+            stmt.execute();
+            System.out.println("Hospede Atualizado");
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void DeletarHospede(Integer id) {
+        String sql = "delete from hospedes where id=?";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            stmt.execute();
+            System.out.println("Hospede Deletado");
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
     public List<Hospede> ListarTodosHospedes(){
         List<Hospede> hospedes = new ArrayList<Hospede>();
         try {
