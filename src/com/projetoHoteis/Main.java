@@ -92,9 +92,9 @@ public class Main {
                             int idHospede = sc.nextInt();
                             System.out.print("Insira o numero do quarto:");
                             int numeroQuarto = sc.nextInt();
-                            System.out.print("Insira a data de entrada:");
+                            System.out.print("Insira a data de entrad (YYYY-MM-dd):");
                             String dataEntrada = sc.next();
-                            System.out.print("Insira a data de saída:");
+                            System.out.print("Insira a data de saída (YYYY-MM-dd):");
                             String dataSaida = sc.next();
                             Reserva reserva = new Reserva(
                                     idReserva,
@@ -124,9 +124,9 @@ public class Main {
                             int idReserva = sc.nextInt();
                             System.out.println("Qual o novo numero do quarto?");
                             int newNumQaurto = sc.nextInt();
-                            System.out.println("Qual a nova data de entrada?");
+                            System.out.println("Qual a nova data de entrada? (YYYY-MM-dd)");
                             String newDataEntrada = sc.next();
-                            System.out.println("Qual a nova data de saída?");
+                            System.out.println("Qual a nova data de saída? (YYYY-MM-dd)");
                             String newDataSaida = sc.next();
                             reservaDao.AtualizarReserva(
                                     idReserva,

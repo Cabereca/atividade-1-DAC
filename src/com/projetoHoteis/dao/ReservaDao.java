@@ -37,7 +37,6 @@ public class ReservaDao {
         try {
             PreparedStatement stmt = this.connection.prepareStatement("select * from reservas");
             ResultSet rs = stmt.executeQuery();
-            rs.close();
             while (rs.next()) {
                 Reserva reserva = new Reserva(
                   rs.getInt("id"),
@@ -48,6 +47,7 @@ public class ReservaDao {
                 );
                 reservas.add(reserva);
             }
+            stmt.close();
 
         } catch (SQLException e) {
             System.out.println(e);
