@@ -92,7 +92,7 @@ public class Main {
                             int idHospede = sc.nextInt();
                             System.out.print("Insira o numero do quarto:");
                             int numeroQuarto = sc.nextInt();
-                            System.out.print("Insira a data de entrad (YYYY-MM-dd):");
+                            System.out.print("Insira a data de entrada (YYYY-MM-dd):");
                             String dataEntrada = sc.next();
                             System.out.print("Insira a data de saída (YYYY-MM-dd):");
                             String dataSaida = sc.next();
@@ -109,11 +109,12 @@ public class Main {
                         case 2 -> {
                             ReservaDao reservaDao = new ReservaDao();
                             List<Reserva> reservas = reservaDao.ListarReservas();
-
+                            System.out.println("ID  | ID_HOSPEDE | Nº QUARTO | DATA_ENTRADA | DATA_SAIDA");
+                            System.out.println("--------------------------------------------------------");
                             reservas.forEach((reserva) -> System.out.println(
-                                        reserva.getId() + " | " + reserva.getIdHospede() +
-                                                " | " + reserva.getNumeroQuarto() + " | " +
-                                                reserva.getdataEntrada() + " | " + reserva.getdataSaida()
+                                        reserva.getId() + "   |     " + reserva.getIdHospede() +
+                                                "      |      " + reserva.getNumeroQuarto() + "  | " +
+                                                reserva.getdataEntrada() + "   | " + reserva.getdataSaida()
                                     )
                             );
                         }
